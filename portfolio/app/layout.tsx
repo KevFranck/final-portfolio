@@ -1,10 +1,12 @@
 import type { Metadata, Viewport } from "next";
+import { siteConfig } from "@/data/portfolio";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Kevin Owona Portfolio",
+  metadataBase: new URL(siteConfig.siteUrl!),
+  title: "Kevin Owona | Full-Stack Web Developer",
   description:
-    "Professional portfolio of Kevin Owona, web developer with cloud, DevOps, and automation experience.",
+    "Full-Stack Web Developer based in Ottawa specializing in React, Django, FastAPI, Python and PostgreSQL, with experience building production web applications and API-driven automation.",
   icons: {
     icon: [
       { url: "/icon.svg", type: "image/svg+xml" },

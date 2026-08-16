@@ -73,7 +73,7 @@ export default function OpenGraphImage() {
                 color: "#ffffff",
               }}
             >
-              Web Developer, Cloud & DevOps Enthusiast, Automation Engineer
+              Full-Stack Web Developer
             </div>
             <div
               style={{
@@ -82,8 +82,8 @@ export default function OpenGraphImage() {
                 color: "#cbd5e1",
               }}
             >
-              Building web applications, cloud-ready systems, and AI-powered workflows for real
-              operational use.
+              React, Django, FastAPI, Python, and PostgreSQL — building useful web applications
+              and API-driven automation.
             </div>
           </div>
 
@@ -94,7 +94,7 @@ export default function OpenGraphImage() {
               flexWrap: "wrap",
             }}
           >
-            {["React & Next.js", "Python & APIs", "Cloud", "DevOps", "Automation"].map(
+            {["React", "Django", "FastAPI", "Python", "PostgreSQL"].map(
               (item) => (
                 <div
                   key={item}
