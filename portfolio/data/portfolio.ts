@@ -150,6 +150,9 @@ export type PortfolioContent = {
     description: string;
     note: string;
     items: Project[];
+    otherTitle: string;
+    otherDescription: string;
+    otherItems: Project[];
   };
   hiringCta: {
     eyebrow: string;
@@ -199,12 +202,12 @@ export type PortfolioContent = {
 export const siteConfig: SiteConfig = {
   defaultLocale,
   locales,
-  siteUrl: "",
+  siteUrl: "https://kevinowona.com",
 };
 
 export const profile = {
   name: "Kevin Owona",
-  location: "Based in Canada, with experience delivering solutions across operations, web platforms, and automation workflows.",
+  location: "Ottawa, Canada",
   education: "Master's degree in Telecommunications and Networking",
 };
 
@@ -220,94 +223,66 @@ export const contactLinks = {
 
 const skillCategoriesEn: SkillCategory[] = [
   {
-    title: "Web Development",
-    description: "Frontend and full-stack delivery with a focus on maintainable user-facing products.",
-    items: ["JavaScript", "TypeScript", "React", "Next.js"],
+    title: "Frontend",
+    description: "Accessible, maintainable interfaces for real application workflows.",
+    items: ["React", "JavaScript", "TypeScript", "HTML5", "CSS3"],
   },
   {
-    title: "Backend & APIs",
-    description: "Application logic, service integration, and backend systems that support production needs.",
+    title: "Backend",
+    description: "Application logic, data flows, and APIs that support operational needs.",
     items: ["Python", "Django", "FastAPI", "REST APIs"],
   },
   {
-    title: "Databases",
-    description: "Practical experience modeling, querying, and integrating data across common relational and document stores.",
-    items: ["PostgreSQL", "MySQL", "MongoDB"],
+    title: "Database",
+    description: "Relational data modeling and application integration.",
+    items: ["PostgreSQL"],
   },
   {
-    title: "Cloud",
-    description: "Building with cloud fundamentals in mind and growing toward architecture and operations roles.",
-    items: ["AWS", "Azure Fundamentals"],
+    title: "API & Automation",
+    description: "Connecting applications and business workflows through reliable integrations.",
+    items: ["n8n", "Webhooks", "OAuth2", "API Integration", "WhatsApp Integration"],
   },
   {
-    title: "DevOps & Infrastructure",
-    description: "Tooling and infrastructure practices that support deployment, repeatability, and operational clarity.",
-    items: ["Terraform", "Docker", "Bash"],
-  },
-  {
-    title: "Automation & AI Workflows",
-    description: "Workflow systems that connect messaging, scheduling, qualification, and business operations.",
-    items: [
-      "n8n",
-      "Vapi",
-      "AI assistants",
-      "Workflow automation",
-      "API integrations",
-      "WhatsApp automation",
-      "Scheduling automation",
-      "Lead qualification automation",
-    ],
+    title: "Tools & Deployment",
+    description: "Tools used to ship, operate, and support web applications.",
+    items: ["Git", "GitHub", "Postman", "Docker", "Linux", "Ubuntu Server", "Nginx", "AWS"],
   },
 ];
 
 const skillCategoriesFr: SkillCategory[] = [
   {
-    title: "Developpement Web",
-    description: "Conception frontend et full-stack avec une attention particuliere a la maintenabilite des produits.",
-    items: ["JavaScript", "TypeScript", "React", "Next.js"],
+    title: "Frontend",
+    description: "Interfaces accessibles et maintenables pour de vrais workflows applicatifs.",
+    items: ["React", "JavaScript", "TypeScript", "HTML5", "CSS3"],
   },
   {
-    title: "Backend & APIs",
-    description: "Logique applicative, integration de services et backends adaptes a des besoins reels.",
+    title: "Backend",
+    description: "Logique applicative, flux de donnees et APIs adaptes a des besoins reels.",
     items: ["Python", "Django", "FastAPI", "APIs REST"],
   },
   {
-    title: "Bases de Donnees",
-    description: "Experience pratique de modelisation, de requetage et d'integration avec des bases relationnelles et documentaires.",
-    items: ["PostgreSQL", "MySQL", "MongoDB"],
+    title: "Base de donnees",
+    description: "Modelisation de donnees relationnelles et integration applicative.",
+    items: ["PostgreSQL"],
   },
   {
-    title: "Cloud",
-    description: "Approche cloud-ready avec une base solide et une progression continue vers des roles cloud et operations.",
-    items: ["AWS", "Azure Fundamentals"],
+    title: "API & Automatisation",
+    description: "Connexion d'applications et de processus metier par des integrations fiables.",
+    items: ["n8n", "Webhooks", "OAuth2", "Integration API", "Integration WhatsApp"],
   },
   {
-    title: "DevOps & Infrastructure",
-    description: "Outils et pratiques qui renforcent le deploiement, la repetition et la lisibilite operationnelle.",
-    items: ["Terraform", "Docker", "Bash"],
-  },
-  {
-    title: "Automatisation & Workflows IA",
-    description: "Systemes d'automatisation reliant messagerie, planification, qualification et operations metier.",
-    items: [
-      "n8n",
-      "Vapi",
-      "Assistants IA",
-      "Automatisation de workflows",
-      "Integrations API",
-      "Automatisation WhatsApp",
-      "Automatisation de rendez-vous",
-      "Automatisation de qualification de leads",
-    ],
+    title: "Outils & Deploiement",
+    description: "Outils utilises pour livrer, exploiter et soutenir des applications web.",
+    items: ["Git", "GitHub", "Postman", "Docker", "Linux", "Ubuntu Server", "Nginx", "AWS"],
   },
 ];
 
 const portfolioContent: Record<Locale, PortfolioContent> = {
   en: {
     metadata: {
-      title: "Kevin Owona | Web Developer | Cloud & DevOps Enthusiast | Automation Engineer",
+      title: "Kevin Owona | Full-Stack Web Developer",
       description:
-        "Professional portfolio of Kevin Owona, highlighting web development, cloud-ready systems, DevOps tooling, and AI-powered automations.",
+        "Full-Stack Web Developer based in Ottawa specializing in React, Django, FastAPI, Python and PostgreSQL, with experience building production web applications and API-driven automation.",
       locale: "en_CA",
     },
     ui: {
@@ -330,7 +305,7 @@ const portfolioContent: Record<Locale, PortfolioContent> = {
       viewRepository: "View Repository",
       expandableSection: "Expandable Section",
       placeholderNotice:
-        "Add your public resume link and deployed site URL in the portfolio data file when they are available.",
+        "Resume available on request. Add the deployed site URL in the portfolio data file when it is available.",
       viewCredential: "View credential",
       credentialIdLabel: "Credential ID",
       certificationNumberLabel: "Certification Number",
@@ -345,32 +320,30 @@ const portfolioContent: Record<Locale, PortfolioContent> = {
       { href: "#contact", label: "Contact" },
     ],
     header: {
-      summary: "Web • Cloud • DevOps • Automation",
+      summary: "Full-Stack Web Developer",
       projectsLabel: "Projects",
       contactLabel: "Let's Talk",
     },
     hero: {
       availability: "Open to recruiter conversations and technical opportunities",
-      headline:
-        "Building web products, cloud-ready systems, and automation that solves real work.",
-      professionalLine:
-        "Web Developer | Cloud & DevOps Enthusiast | Automation Engineer",
+      headline: "Full-Stack Web Developer",
+      professionalLine: "React • Django • FastAPI • Python • PostgreSQL",
       summary:
-        "I build web applications, cloud-ready systems, and workflow automations that solve real operational problems. My background combines full-stack development, cloud infrastructure, DevOps tooling, and AI-powered automation.",
+        "I design and build complete web applications, from the user interface to the backend and database, with particular attention to business needs, APIs, and deployment.",
       primaryCta: "View Projects",
       secondaryCta: "Contact Me",
       resumeAvailable: "Download Resume",
       resumeUnavailable: "Resume on Request",
       quickScanPitch:
-        "A recruiter-friendly profile for teams hiring across application development, cloud-facing environments, and automation-heavy workflows.",
+        "Web development first, with API integration, automation, and deployment experience that supports complete delivery.",
       quickFacts: [
         {
           label: "Positioning",
-          value: "Full-stack development with growing cloud, DevOps, and automation depth.",
+          value: "Full-Stack Web Developer",
         },
         {
           label: "Current Strength",
-          value: "Building practical systems that connect product delivery, APIs, and operations.",
+          value: "React, Django, FastAPI, Python, and PostgreSQL.",
         },
         {
           label: "Certified",
@@ -382,152 +355,153 @@ const portfolioContent: Record<Locale, PortfolioContent> = {
         },
       ],
       tags: [
-        "React & Next.js",
-        "Python & APIs",
-        "Cloud Foundations",
-        "Terraform & Docker",
-        "Automation & AI",
+        "React",
+        "Django",
+        "FastAPI",
+        "Python",
+        "PostgreSQL",
+        "API Integration • Automation • Deployment",
       ],
       targetRoles: [
-        "Web Developer",
+        "Full-Stack Web Developer",
         "React Developer",
         "Python Developer",
-        "Cloud Engineer",
-        "DevOps / Cloud Operations",
-        "Automation Engineer",
       ],
       pillars: [
         {
-          title: "Web Development",
+          title: "Full-Stack Web Development",
           description:
-            "Modern interfaces and full-stack applications built for real operational use.",
+            "Complete applications from responsive interfaces to backend logic and data.",
         },
         {
-          title: "Cloud",
+          title: "APIs & Backend",
           description:
-            "Cloud-ready thinking with AWS focus and Azure fundamentals already certified.",
+            "Django, FastAPI, REST APIs, and PostgreSQL for reliable application foundations.",
         },
         {
-          title: "DevOps",
+          title: "Automation & Integration",
           description:
-            "Infrastructure, containers, scripts, and delivery workflows that improve reliability.",
+            "Webhooks, n8n, and external APIs that connect applications to operations.",
         },
         {
-          title: "Automation / AI",
+          title: "Deployment",
           description:
-            "Workflow automation, API orchestration, and AI assistants that remove repetitive work.",
+            "Practical tooling for deploying and operating web applications.",
         },
       ],
       fitSummary:
-        "Teams looking for someone who can contribute across frontend delivery, backend/API work, infrastructure learning, and practical workflow automation.",
+        "Teams building useful web applications that need thoughtful frontend, backend, database, and API work.",
       focusSummary:
-        "Strengthening cloud architecture and security capability while continuing to ship real web and automation solutions.",
+        "Building practical web applications and integrations that solve operational needs.",
     },
     about: {
       eyebrow: "About",
-      title:
-        "A profile shaped by software delivery, infrastructure curiosity, and operational problem solving.",
+      title: "Full-stack web development grounded in real operational needs.",
       description:
-        "My background connects web application development with IT operations, cloud learning, and practical automation. That mix helps me move comfortably between user-facing features, backend logic, delivery workflows, and systems thinking.",
+        "A Full-Stack Web Developer based in Ottawa, I build applications that solve real operational needs. My work primarily uses React, Django, FastAPI, Python, and PostgreSQL.",
       panelText:
-        "I focus on building solutions that are useful, reliable, and easier to operate. Whether the work involves a web platform, an integration layer, or a workflow automation, I aim to reduce friction and improve execution.",
+        "My experience spans requirements analysis, backend design, REST APIs, databases, administrative interfaces, authentication, deployment, and external-service integration. I also use n8n, webhooks, and APIs to connect applications to automated business processes.",
       educationLabel: "Education",
       locationLabel: "Location",
     },
     expertise: {
       eyebrow: "Expertise",
-      title:
-        "A clear skill map across application delivery, cloud foundations, and automation systems.",
+      title: "A focused full-stack skill set, from interface to deployment.",
       description:
-        "The goal here is quick scanability: technologies grouped by how they contribute to real solution delivery, not presented as an unstructured logo wall.",
+        "Web development is the core focus. API integration, automation, and deployment complement the applications I build.",
       categories: skillCategoriesEn,
     },
     projects: {
-      eyebrow: "Featured Projects",
-      title:
-        "Selected work that shows real product delivery, integration thinking, and automation design.",
+      eyebrow: "Selected Projects",
+      title: "Recent projects built for real organizations and operational needs.",
       description:
-        "These projects are presented to help recruiters and hiring managers quickly assess practical capability, architecture awareness, and delivery relevance.",
+        "A selection of full-stack web applications first, followed by an API-driven automation workflow.",
       note:
-        "Private work is intentionally presented with professional summaries rather than invented public links.",
+        "Private work is described with confirmed technologies and delivery context only.",
       items: [
         {
-          title: "Bravo Jeunesse - Cohort Management Platform",
-          eyebrow: "Client Project",
+          title: "CESOC — Print Management System",
+          eyebrow: "Full-Stack / Volunteer Developer • May 2026 – July 2026",
           summary:
-            "Designed and developed in Ottawa, Canada, for Mosaique Interculturelle, a full-stack web application to digitize and optimize the management of the Bravo Jeunesse youth training program.",
+            "Internal application developed to manage and control print usage at CESOC.",
           problem:
-            "Manual coordination across participants, attendance, scheduling, and reporting created friction for administrators and trainers.",
+            "The organization needed a practical way to apply print quotas and business rules while giving administrators visibility and control.",
           outcome:
-            "Turned a fragmented administrative process into a centralized digital platform that supports coordination, visibility, and reporting.",
-          stack: [
-            "Full-Stack",
-            "React",
-            "Django / FastAPI",
-            "PostgreSQL",
-            "Attendance Tracking",
-            "Reporting",
-          ],
+            "Deployed and currently used internally at CESOC.",
+          stack: ["React", "FastAPI", "Python", "PostgreSQL"],
           highlights: [
-            "Centralized participant management, attendance tracking, program scheduling, and reporting for administrators and trainers in a single platform.",
-            "Designed around real operational workflows rather than a generic dashboard pattern.",
-            "Presented as a private client project without exposing confidential implementation details.",
+            "React administration interface with FastAPI and Python backend services.",
+            "Desktop application in Python, with quota management and business rules.",
+            "Administrative and tracking features deployed in CESOC's internal environment.",
           ],
           links: [
             { label: "Private Project" },
-            { label: "Case Study Available on Request" },
           ],
         },
         {
-          title: "ZIM Shipment Tracking Chatbot",
-          eyebrow: "Automation / AI Workflow",
+          title: "Black Med Mentorship",
+          eyebrow: "Full-Stack Web Developer • Two-developer team • 2026",
           summary:
-            "Designed and implemented in Ottawa, Canada, for Otus, an AI-powered WhatsApp chatbot to automate shipment tracking requests using the ZIM platform.",
+            "Web platform supporting mentorship and community engagement in the medical field.",
           problem:
-            "Shipment tracking requests are repetitive, time-sensitive, and difficult to scale when handled manually across messaging channels.",
+            "The platform needed reliable account, event, administrative, and data-management workflows.",
           outcome:
-            "Moved repetitive shipment requests into a modular automation flow with better consistency, scalability, and multilingual support.",
-          stack: [
-            "n8n",
-            "WhatsApp API",
-            "OAuth2",
-            "Automation",
-            "AI Chatbot",
-            "Google Sheets",
-          ],
+            "Contributed full-stack features as part of a two-developer team.",
+          stack: ["React", "Django", "PostgreSQL"],
           highlights: [
-            "Integrated the ZIM Shipping API with OAuth2 authentication and real-time data retrieval.",
-            "Built modular n8n workflows and sub-workflows to keep the system maintainable and scalable.",
-            "Handled invalid references, service errors, analytics logging, and English/French responses.",
+            "Authentication, user accounts, and administrative dashboard contributions.",
+            "Event management, React interfaces, backend functionality, and PostgreSQL data management.",
           ],
           links: [
-            { label: "Client Project" },
-            { label: "Workflow Details Available on Request" },
+            { label: "View Live Website", href: "https://blackmedmentorship.ca" },
           ],
         },
+        {
+          title: "Bravo Jeunesse — Mosaïque Interculturelle",
+          eyebrow: "Sole Full-Stack Developer • February 2026 – April 2026",
+          summary:
+            "Web application that centralized participant, training, attendance, schedule, and program information management.",
+          problem:
+            "The Mosaïque Interculturelle program needed one place to organize participant and operational information.",
+          outcome:
+            "Delivered a centralized application and refined it through user feedback.",
+          stack: ["React", "Django"],
+          highlights: [
+            "Participant, training/session, attendance, and schedule management.",
+            "Administrative dashboard features and centralized program data.",
+            "Built independently as the sole full-stack developer.",
+          ],
+          links: [{ label: "Private Project" }],
+        },
+        {
+          title: "ZIM Shipment Tracking Automation",
+          eyebrow: "API Integration & Automation",
+          summary:
+            "Automated workflow that returns shipment-tracking information through WhatsApp by connecting a conversational workflow to the ZIM API.",
+          problem:
+            "Tracking requests need consistent, timely responses without manual lookup for every message.",
+          outcome:
+            "WhatsApp → n8n workflow → ZIM API → processed shipment information → automated reply.",
+          stack: ["n8n", "REST API", "OAuth2", "WhatsApp", "Webhooks", "Google Sheets"],
+          highlights: [
+            "ZIM API integration with OAuth2 authentication and shipment-data processing.",
+            "Modular n8n workflows, error handling, and English/French automated responses.",
+          ],
+          links: [{ label: "Client Project" }],
+        },
+      ],
+      otherTitle: "Other Projects",
+      otherDescription: "Additional work that complements the primary full-stack portfolio.",
+      otherItems: [
         {
           title: "Light Web Solutions Website + AI Assistant",
           eyebrow: "Live Project",
-          summary:
-            "Designed and integrated a conversational AI assistant into a business website to automate lead qualification, communication, and scheduling.",
-          problem:
-            "Service businesses need faster response handling and clearer lead capture without adding friction to the website experience.",
-          outcome:
-            "Combined business-facing presentation with automation-driven lead handling to support faster engagement and a cleaner conversion path.",
-          stack: [
-            "Next.js",
-            "AI Assistant",
-            "Lead Qualification",
-            "Scheduling",
-            "Conversion",
-            "Automation",
-          ],
-          highlights: [
-            "Integrated an assistant directly into the website experience to support first-contact interactions.",
-            "Connected automation flows around lead qualification, client communication, and appointment scheduling.",
-            "Balanced web presentation with practical automation that supports business operations.",
-          ],
-          links: [{ label: "Live Website", href: "https://www.lightwebsolutions.ca" }],
+          summary: "Business website with a conversational assistant supporting lead qualification, communication, and scheduling.",
+          problem: "Service businesses need faster first-contact handling and clearer lead capture.",
+          outcome: "Combined web presentation with automation-supported engagement.",
+          stack: ["Next.js", "AI Assistant", "Automation"],
+          highlights: ["Conversational assistant integrated into the website experience."],
+          links: [{ label: "View Live Website", href: "https://www.lightwebsolutions.ca" }],
         },
       ],
     },
@@ -542,58 +516,53 @@ const portfolioContent: Record<Locale, PortfolioContent> = {
     },
     experience: {
       eyebrow: "Experience",
-      title:
-        "Professional experience across software development, systems support, and operational execution.",
+      title: "Recent full-stack development experience.",
       description:
-        "The progression below shows practical delivery experience that supports roles spanning web development, cloud operations, and automation.",
+        "Technical roles most relevant to full-stack web development.",
       items: [
         {
-          role: "IT Engineer",
-          company: "Ministry of Public Service and Administrative Reform",
-          location: "Cameroon",
-          period: "2023 - 2025",
+          role: "Full-Stack Developer",
+          company: "Bravo Jeunesse — Mosaïque Interculturelle",
+          location: "Ottawa, Canada",
+          period: "February 2026 – April 2026",
           summary:
-            "Supported internal systems while contributing to troubleshooting, operational improvement, and task automation.",
+            "Sole developer for a web application centralizing program participants, training sessions, attendance, schedules, and administrative data.",
           highlights: [
-            "Supported and improved internal IT systems for day-to-day operations.",
-            "Assisted with system administration and technical troubleshooting.",
-            "Participated in automating repetitive technical tasks and documentation work.",
+            "React and Django application delivery.",
+            "Improved the application from user feedback.",
           ],
         },
         {
-          role: "Web Application Developer",
-          company: "Univers Binaire",
-          location: "Cameroon",
-          period: "2019 - 2023",
+          role: "Volunteer Developer",
+          company: "CESOC",
+          location: "Ottawa, Canada",
+          period: "May 2026 – July 2026",
           summary:
-            "Developed and maintained web applications with a focus on APIs, databases, and application logic.",
+            "Developed an internal print-management system deployed for CESOC use.",
           highlights: [
-            "Developed and maintained web applications used in real project contexts.",
-            "Worked across APIs, databases, and backend logic to deliver complete solutions.",
-            "Collaborated with cross-functional teams to move projects from idea to implementation.",
+            "React, FastAPI, Python, and PostgreSQL.",
+            "Quota rules, administration, and usage tracking.",
           ],
         },
         {
-          role: "IT Support Technician",
-          company: "Afrikanet Online",
-          location: "Cameroon",
-          period: "2018 - 2019",
+          role: "Full-Stack Web Developer",
+          company: "Black Med Mentorship",
+          location: "Canada",
+          period: "2026",
           summary:
-            "Provided technical support and incident resolution while maintaining systems and user environments.",
+            "Contributed to a web platform for medical mentorship and community engagement as part of a two-developer team.",
           highlights: [
-            "Resolved incidents and provided technical support to users.",
-            "Installed and maintained systems and user environments.",
-            "Delivered customer-focused IT assistance grounded in reliability and service quality.",
+            "React, Django, and PostgreSQL contributions.",
+            "Accounts, administration, events, and backend features.",
           ],
         },
       ],
     },
     certifications: {
       eyebrow: "Certifications",
-      title:
-        "Validated fundamentals today, with cloud and security progression already in motion.",
+      title: "Certification",
       description:
-        "This section keeps certified and in-progress credentials visible so teams can quickly see current proof points and near-term direction.",
+        "A verified cloud fundamentals credential that complements the web-development focus.",
       items: [
         {
           name: "Microsoft Certified: Azure Fundamentals (AZ-900)",
@@ -602,16 +571,6 @@ const portfolioContent: Record<Locale, PortfolioContent> = {
           href: "https://learn.microsoft.com/en-ca/users/kevinowona-0067/credentials/b70f9dede1be1a35",
           credentialId: "B70F9DEDE1BE1A35",
           certificationNumber: "EB51DB-Q4B342",
-        },
-        {
-          name: "AWS Certified Solutions Architect - Associate",
-          status: "In Progress",
-          detail: "Expected completion: May 2026.",
-        },
-        {
-          name: "CompTIA Security+",
-          status: "In Progress",
-          detail: "Expected completion: July 2026.",
         },
       ],
     },
@@ -635,13 +594,12 @@ const portfolioContent: Record<Locale, PortfolioContent> = {
     },
     contact: {
       eyebrow: "Contact",
-      title:
-        "Open to web development, cloud, DevOps, and automation engineering opportunities.",
+      title: "Let's Build Something Useful",
       description:
-        "If you are hiring for someone who can contribute across application development, cloud-facing systems, and operational automation, I would be glad to connect.",
+        "If you are hiring a Full-Stack Web Developer to build useful applications, APIs, and integrations, I would be glad to connect.",
       detailCards: [
-        "Strong fit for recruiter screening, technical interview pipelines, and client-facing technical projects.",
-        "Especially relevant for roles needing breadth across frontend, backend, cloud, and automation workflows.",
+        "Full-stack web development: interface, backend, database, and deployment.",
+        "API integration and automation experience for operational workflows.",
       ],
       phoneLabel: "Phone",
       emailLabel: "Email",
@@ -658,9 +616,9 @@ const portfolioContent: Record<Locale, PortfolioContent> = {
   },
   fr: {
     metadata: {
-      title: "Kevin Owona | Developpeur Web | Cloud, DevOps et Automatisation",
+      title: "Kevin Owona | Developpeur Web Full-Stack",
       description:
-        "Portfolio professionnel de Kevin Owona, mettant en avant le developpement web, les systemes cloud-ready, le DevOps et l'automatisation propulsee par l'IA.",
+        "Developpeur Web Full-Stack base a Ottawa, specialise en React, Django, FastAPI, Python et PostgreSQL, avec une experience d'applications web en production et d'automatisation pilotee par API.",
       locale: "fr_CA",
     },
     ui: {
@@ -683,7 +641,7 @@ const portfolioContent: Record<Locale, PortfolioContent> = {
       viewRepository: "Voir le depot",
       expandableSection: "Section extensible",
       placeholderNotice:
-        "Ajoutez votre lien de CV public et l'URL du site deploye dans le fichier de donnees quand ils seront disponibles.",
+        "CV disponible sur demande. Ajoutez l'URL du site deploye dans le fichier de donnees lorsqu'elle sera disponible.",
       viewCredential: "Voir le certificat",
       credentialIdLabel: "ID du certificat",
       certificationNumberLabel: "Numero de certification",
@@ -698,32 +656,30 @@ const portfolioContent: Record<Locale, PortfolioContent> = {
       { href: "#contact", label: "Contact" },
     ],
     header: {
-      summary: "Web • Cloud • DevOps • Automatisation",
+      summary: "Developpeur Web Full-Stack",
       projectsLabel: "Projets",
       contactLabel: "Echanger",
     },
     hero: {
       availability: "Ouvert aux echanges avec recruteurs et opportunites techniques",
-      headline:
-        "Je construis des produits web, des systemes cloud-ready et des automatisations utiles a des besoins reels.",
-      professionalLine:
-        "Developpeur Web | Passionne Cloud & DevOps | Ingenieur en Automatisation",
+      headline: "Developpeur Web Full-Stack",
+      professionalLine: "React • Django • FastAPI • Python • PostgreSQL",
       summary:
-        "Je developpe des applications web, des systemes prets pour le cloud et des automatisations de workflow qui resolvent de vrais problemes operationnels. Mon parcours combine le full-stack, l'infrastructure cloud, les outils DevOps et l'automatisation appuyee par l'IA.",
+        "Je conçois et developpe des applications web completes, de l'interface utilisateur au backend et a la base de donnees, avec une attention particuliere aux besoins metier, aux APIs et au deploiement.",
       primaryCta: "Voir les projets",
       secondaryCta: "Me contacter",
       resumeAvailable: "Telecharger le CV",
       resumeUnavailable: "CV disponible sur demande",
       quickScanPitch:
-        "Un profil facile a evaluer pour les equipes qui recrutent sur le developpement applicatif, le cloud et l'automatisation de workflows.",
+        "Le developpement web est mon axe principal, complete par l'integration d'API, l'automatisation et le deploiement.",
       quickFacts: [
         {
           label: "Positionnement",
-          value: "Developpement full-stack avec une progression continue en cloud, DevOps et automatisation.",
+          value: "Developpeur Web Full-Stack",
         },
         {
           label: "Force actuelle",
-          value: "Concevoir des solutions pratiques qui relient produit, APIs et operations.",
+          value: "React, Django, FastAPI, Python et PostgreSQL.",
         },
         {
           label: "Certification",
@@ -735,151 +691,145 @@ const portfolioContent: Record<Locale, PortfolioContent> = {
         },
       ],
       tags: [
-        "React & Next.js",
-        "Python & APIs",
-        "Fondamentaux Cloud",
-        "Terraform & Docker",
-        "Automatisation & IA",
+        "React",
+        "Django",
+        "FastAPI",
+        "Python",
+        "PostgreSQL",
+        "Integration API • Automatisation • Deploiement",
       ],
       targetRoles: [
-        "Developpeur Web",
+        "Developpeur Web Full-Stack",
         "Developpeur React",
         "Developpeur Python",
-        "Ingenieur Cloud",
-        "DevOps / Operations Cloud",
-        "Ingenieur Automatisation",
       ],
       pillars: [
         {
-          title: "Developpement Web",
+          title: "Developpement Web Full-Stack",
           description:
-            "Interfaces modernes et applications full-stack construites pour des usages operationnels reels.",
+            "Applications completes, de l'interface responsive a la logique backend et aux donnees.",
         },
         {
-          title: "Cloud",
+          title: "APIs & Backend",
           description:
-            "Approche cloud-ready avec un focus AWS et une base Azure deja certifiee.",
+            "Django, FastAPI, APIs REST et PostgreSQL pour des fondations applicatives fiables.",
         },
         {
-          title: "DevOps",
+          title: "Automatisation & Integration",
           description:
-            "Infrastructure, conteneurs, scripts et workflows de livraison qui renforcent la fiabilite.",
+            "Webhooks, n8n et APIs externes pour relier les applications aux operations.",
         },
         {
-          title: "Automatisation / IA",
+          title: "Deploiement",
           description:
-            "Automatisation de workflows, orchestration d'API et assistants IA qui reduisent le travail repetitif.",
+            "Outils pratiques pour deployer et exploiter des applications web.",
         },
       ],
       fitSummary:
-        "Equipes recherchant quelqu'un capable de contribuer sur le frontend, les APIs/backend, l'apprentissage infrastructure et l'automatisation de workflows.",
+        "Equipes qui construisent des applications web utiles et ont besoin de frontend, backend, base de donnees et APIs.",
       focusSummary:
-        "Renforcer les competences en architecture cloud et securite tout en continuant a livrer des solutions web et d'automatisation concretes.",
+        "Construire des applications web et integrations pratiques qui repondent a des besoins operationnels.",
     },
     about: {
       eyebrow: "A propos",
-      title:
-        "Un profil faconne par la livraison logicielle, la curiosite infrastructure et la resolution de problemes operationnels.",
+      title: "Le developpement web full-stack au service de besoins operationnels reels.",
       description:
-        "Mon parcours relie developpement d'applications web, operations IT, apprentissage cloud et automatisation pratique. Cela me permet d'evoluer facilement entre fonctionnalites produit, logique backend, workflows de livraison et vision systeme.",
+        "Developpeur Web Full-Stack base a Ottawa, je conçois des applications pour resoudre des besoins operationnels reels, principalement avec React, Django, FastAPI, Python et PostgreSQL.",
       panelText:
-        "Je cherche a construire des solutions utiles, fiables et plus simples a exploiter. Qu'il s'agisse d'une plateforme web, d'une couche d'integration ou d'un workflow automatise, mon objectif est de reduire la friction et d'ameliorer l'execution.",
+        "Mon experience couvre l'analyse des besoins, le backend, les APIs REST, les bases de donnees, les interfaces administratives, l'authentification, le deploiement et l'integration de services externes. n8n, les webhooks et les APIs me permettent aussi de connecter les applications aux processus metier automatises.",
       educationLabel: "Formation",
       locationLabel: "Localisation",
     },
     expertise: {
       eyebrow: "Expertise",
-      title:
-        "Une lecture claire des competences entre delivery applicatif, fondations cloud et systemes d'automatisation.",
+      title: "Des competences full-stack ciblees, de l'interface au deploiement.",
       description:
-        "L'objectif est la lisibilite rapide: les technologies sont groupees par usage reel, pas presentees comme un simple mur de logos.",
+        "Le developpement web est le coeur du profil. L'integration API, l'automatisation et le deploiement completent les applications realisees.",
       categories: skillCategoriesFr,
     },
     projects: {
-      eyebrow: "Projets phares",
-      title:
-        "Des projets selectionnes qui montrent une vraie capacite de delivery, d'integration et de conception d'automatisation.",
+      eyebrow: "Projets selectionnes",
+      title: "Des realisations recentes pour des organisations et besoins operationnels reels.",
       description:
-        "Ces projets sont presentes pour permettre aux recruteurs et managers techniques d'evaluer rapidement la capacite pratique, la logique d'architecture et la pertinence operationnelle.",
+        "Trois applications web full-stack, suivies d'un workflow d'automatisation pilote par API.",
       note:
-        "Les projets prives sont presentes de maniere professionnelle sans inventer de liens publics.",
+        "Les projets prives sont decrits uniquement avec des technologies et un contexte de livraison confirmes.",
       items: [
         {
-          title: "Bravo Jeunesse - Plateforme de gestion de cohortes",
-          eyebrow: "Projet client",
+          title: "CESOC — Systeme de gestion des impressions",
+          eyebrow: "Developpeur Full-Stack benevole • Mai 2026 – Juillet 2026",
           summary:
-            "Conception et developpement a Ottawa, Canada, pour Mosaique Interculturelle, d'une application web full-stack afin de digitaliser et d'optimiser la gestion du programme jeunesse Bravo Jeunesse.",
+            "Application interne developpee pour gerer et controler l'utilisation des impressions au CESOC.",
           problem:
-            "La coordination manuelle des participants, des presences, du planning et du reporting creait des frictions pour les administrateurs et formateurs.",
+            "Le CESOC avait besoin d'appliquer des quotas et regles metier tout en donnant aux administrateurs de la visibilite et du controle.",
           outcome:
-            "Transformation d'un processus administratif disperse en une plateforme centralisee facilitant la coordination, la visibilite et le reporting.",
-          stack: [
-            "Full-Stack",
-            "React",
-            "Django / FastAPI",
-            "PostgreSQL",
-            "Suivi de presence",
-            "Reporting",
-          ],
+            "Deployee et actuellement utilisee en interne au CESOC.",
+          stack: ["React", "FastAPI", "Python", "PostgreSQL"],
           highlights: [
-            "Centralisation de la gestion des participants, du suivi de presence, du planning du programme et du reporting pour les administrateurs et les formateurs dans une seule plateforme.",
-            "Conception alignee sur des workflows operationnels reels plutot qu'un dashboard generique.",
-            "Presentation comme projet client prive sans exposer de details confidentiels.",
+            "Interface d'administration React avec services backend FastAPI et Python.",
+            "Application desktop Python, gestion des quotas et regles metier.",
+            "Fonctions administratives et de suivi dans l'environnement interne du CESOC.",
           ],
-          links: [
-            { label: "Projet prive" },
-            { label: "Etude de cas disponible sur demande" },
-          ],
+          links: [{ label: "Projet prive" }],
         },
         {
-          title: "Chatbot de suivi d'expeditions ZIM",
-          eyebrow: "Workflow d'automatisation / IA",
+          title: "Black Med Mentorship",
+          eyebrow: "Developpeur Web Full-Stack • Equipe de deux developpeurs • 2026",
           summary:
-            "Conception et mise en oeuvre a Ottawa, Canada, pour Otus, d'un chatbot WhatsApp propulse par l'IA afin d'automatiser les demandes de suivi d'expeditions via la plateforme ZIM.",
+            "Plateforme web destinee a faciliter le mentorat et l'engagement communautaire dans le domaine medical.",
           problem:
-            "Les demandes de suivi sont repetitives, sensibles au temps et difficiles a gerer a grande echelle lorsqu'elles sont traitees manuellement.",
+            "La plateforme avait besoin de workflows fiables de comptes, evenements, administration et gestion des donnees.",
           outcome:
-            "Passage des demandes de suivi repetitives vers un flux automatise modulaire, plus coherent, plus resilient et multilingue.",
-          stack: [
-            "n8n",
-            "WhatsApp API",
-            "OAuth2",
-            "Automatisation",
-            "Chatbot IA",
-            "Google Sheets",
-          ],
+            "Contribution a des fonctionnalites full-stack au sein d'une equipe de deux developpeurs.",
+          stack: ["React", "Django", "PostgreSQL"],
           highlights: [
-            "Integration de l'API ZIM Shipping avec OAuth2 et recuperation de donnees en temps reel.",
-            "Construction de workflows et sous-workflows n8n modulaires pour garder une architecture maintenable et evolutive.",
-            "Gestion des references invalides, des erreurs de service, du logging analytique et des reponses anglais/francais.",
+            "Authentification, comptes utilisateurs et tableau de bord administrateur.",
+            "Gestion des evenements, interfaces React, backend et donnees PostgreSQL.",
           ],
-          links: [
-            { label: "Projet client" },
-            { label: "Details du workflow sur demande" },
-          ],
+          links: [{ label: "Voir le site", href: "https://blackmedmentorship.ca" }],
         },
+        {
+          title: "Bravo Jeunesse — Mosaique Interculturelle",
+          eyebrow: "Unique developpeur Full-Stack • Fevrier 2026 – Avril 2026",
+          summary:
+            "Application web centralisant la gestion des participants, formations, presences, horaires et informations du programme.",
+          problem:
+            "Le programme Mosaique Interculturelle avait besoin d'un espace unique pour organiser ses informations operationnelles.",
+          outcome:
+            "Application centralisee livree puis amelioree a partir des retours utilisateurs.",
+          stack: ["React", "Django"],
+          highlights: [
+            "Gestion des participants, formations/sessions, presences et horaires.",
+            "Tableau de bord administratif et centralisation des donnees du programme.",
+            "Application construite de bout en bout par un unique developpeur.",
+          ],
+          links: [{ label: "Projet prive" }],
+        },
+        {
+          title: "Automatisation du suivi d'expeditions ZIM",
+          eyebrow: "Integration API & Automatisation",
+          summary: "Workflow automatise qui fournit des informations de suivi via WhatsApp en se connectant a l'API de ZIM.",
+          problem: "Les demandes de suivi necessitent des reponses coherentes et rapides sans recherche manuelle pour chaque message.",
+          outcome: "WhatsApp → workflow n8n → API ZIM → traitement des informations → reponse automatisee.",
+          stack: ["n8n", "API REST", "OAuth2", "WhatsApp", "Webhooks", "Google Sheets"],
+          highlights: [
+            "Integration de l'API ZIM avec OAuth2 et traitement des informations d'expedition.",
+            "Workflows n8n modulaires, gestion des erreurs et reponses automatisees en francais et anglais.",
+          ],
+          links: [{ label: "Projet client" }],
+        },
+      ],
+      otherTitle: "Autres projets",
+      otherDescription: "Des realisations complementaires au portfolio web full-stack principal.",
+      otherItems: [
         {
           title: "Site Light Web Solutions + assistant IA",
           eyebrow: "Projet en ligne",
-          summary:
-            "Conception et integration d'un assistant conversationnel IA dans un site business pour automatiser qualification, communication et planification.",
-          problem:
-            "Les entreprises de services ont besoin de repondre plus vite et de mieux capter les leads sans alourdir l'experience du site.",
-          outcome:
-            "Association d'une presence web orientee business avec une automatisation de conversion qui fluidifie l'engagement et la qualification.",
-          stack: [
-            "Next.js",
-            "Assistant IA",
-            "Qualification de leads",
-            "Planification",
-            "Conversion",
-            "Automatisation",
-          ],
-          highlights: [
-            "Integration d'un assistant directement dans le parcours web pour mieux gerer les premiers contacts.",
-            "Connexion de flux d'automatisation autour de la qualification, de la communication client et de la prise de rendez-vous.",
-            "Equilibre entre presentation web professionnelle et automatisation utile aux operations commerciales.",
-          ],
+          summary: "Site business avec assistant conversationnel pour la qualification, la communication et la planification.",
+          problem: "Les entreprises de services ont besoin de mieux gerer les premiers contacts.",
+          outcome: "Presentation web associee a une automatisation de l'engagement.",
+          stack: ["Next.js", "Assistant IA", "Automatisation"],
+          highlights: ["Assistant conversationnel integre au parcours web."],
           links: [{ label: "Voir le site", href: "https://www.lightwebsolutions.ca" }],
         },
       ],
@@ -895,58 +845,53 @@ const portfolioContent: Record<Locale, PortfolioContent> = {
     },
     experience: {
       eyebrow: "Experience",
-      title:
-        "Une experience professionnelle entre developpement logiciel, support systeme et execution operationnelle.",
+      title: "Experience recente en developpement full-stack.",
       description:
-        "Le parcours ci-dessous montre une experience concrete de delivery adaptee a des roles web, cloud operations et automatisation.",
+        "Les roles techniques les plus pertinents pour le developpement web full-stack.",
       items: [
         {
-          role: "Ingenieur IT",
-          company: "Ministry of Public Service and Administrative Reform",
-          location: "Cameroun",
-          period: "2023 - 2025",
+          role: "Developpeur Full-Stack",
+          company: "Bravo Jeunesse — Mosaique Interculturelle",
+          location: "Ottawa, Canada",
+          period: "Fevrier 2026 – Avril 2026",
           summary:
-            "Support des systemes internes avec contribution au troubleshooting, a l'amelioration operationnelle et a l'automatisation de taches.",
+            "Unique developpeur d'une application web centralisant participants, formations, presences, horaires et donnees administratives.",
           highlights: [
-            "Support et amelioration des systemes IT internes au quotidien.",
-            "Assistance sur l'administration systeme et la resolution de problemes techniques.",
-            "Participation a l'automatisation de taches techniques repetitives et a la documentation.",
+            "Livraison d'une application React et Django.",
+            "Ameliorations apportees a partir des retours utilisateurs.",
           ],
         },
         {
-          role: "Developpeur d'applications web",
-          company: "Univers Binaire",
-          location: "Cameroun",
-          period: "2019 - 2023",
+          role: "Developpeur benevole",
+          company: "CESOC",
+          location: "Ottawa, Canada",
+          period: "Mai 2026 – Juillet 2026",
           summary:
-            "Developpement et maintenance d'applications web avec un focus sur les APIs, les bases de donnees et la logique applicative.",
+            "Developpement d'un systeme interne de gestion des impressions deploye au CESOC.",
           highlights: [
-            "Developpement et maintenance d'applications web dans des contextes de projets reels.",
-            "Travail sur les APIs, les bases de donnees et la logique backend pour livrer des solutions completes.",
-            "Collaboration avec des equipes pluridisciplinaires pour faire avancer les projets de l'idee a l'implementation.",
+            "React, FastAPI, Python et PostgreSQL.",
+            "Regles de quotas, administration et suivi d'utilisation.",
           ],
         },
         {
-          role: "Technicien support IT",
-          company: "Afrikanet Online",
-          location: "Cameroun",
-          period: "2018 - 2019",
+          role: "Developpeur Web Full-Stack",
+          company: "Black Med Mentorship",
+          location: "Canada",
+          period: "2026",
           summary:
-            "Support technique et resolution d'incidents avec maintenance des systemes et des environnements utilisateurs.",
+            "Contribution a une plateforme de mentorat medical et d'engagement communautaire au sein d'une equipe de deux developpeurs.",
           highlights: [
-            "Resolution d'incidents et support technique aux utilisateurs.",
-            "Installation et maintenance des systemes et environnements utilisateurs.",
-            "Accompagnement des utilisateurs avec une approche orientee service et fiabilite.",
+            "Contributions React, Django et PostgreSQL.",
+            "Comptes, administration, evenements et fonctionnalites backend.",
           ],
         },
       ],
     },
     certifications: {
       eyebrow: "Certifications",
-      title:
-        "Des fondamentaux deja valides, avec une progression cloud et securite clairement engagee.",
+      title: "Certification",
       description:
-        "Cette section rend visibles a la fois les preuves actuelles et la trajectoire de progression a court terme.",
+        "Une certification cloud fondamentale verifiee qui complete le positionnement web.",
       items: [
         {
           name: "Microsoft Certified: Azure Fundamentals (AZ-900)",
@@ -955,16 +900,6 @@ const portfolioContent: Record<Locale, PortfolioContent> = {
           href: "https://learn.microsoft.com/en-ca/users/kevinowona-0067/credentials/b70f9dede1be1a35",
           credentialId: "B70F9DEDE1BE1A35",
           certificationNumber: "EB51DB-Q4B342",
-        },
-        {
-          name: "AWS Certified Solutions Architect - Associate",
-          status: "En cours",
-          detail: "Completion prevue: mai 2026.",
-        },
-        {
-          name: "CompTIA Security+",
-          status: "En cours",
-          detail: "Completion prevue: juillet 2026.",
         },
       ],
     },
@@ -988,13 +923,12 @@ const portfolioContent: Record<Locale, PortfolioContent> = {
     },
     contact: {
       eyebrow: "Contact",
-      title:
-        "Ouvert aux opportunites en developpement web, cloud, DevOps et automatisation.",
+      title: "Travaillons ensemble",
       description:
-        "Si vous recrutez un profil capable de contribuer sur le developpement applicatif, les systemes cloud-ready et l'automatisation operationnelle, je serai ravi d'echanger.",
+        "Si vous recrutez un Developpeur Web Full-Stack pour construire des applications, APIs et integrations utiles, je serai ravi d'echanger.",
       detailCards: [
-        "Profil pertinent pour screening recruteur, entretiens techniques et projets techniques orientés client.",
-        "Particulierement adapte aux roles demandant de la largeur sur frontend, backend, cloud et automatisation.",
+        "Developpement web full-stack : interface, backend, base de donnees et deploiement.",
+        "Experience en integration API et automatisation de workflows operationnels.",
       ],
       phoneLabel: "Telephone",
       emailLabel: "Email",

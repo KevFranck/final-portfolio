@@ -38,14 +38,12 @@ export function PortfolioPage({ locale }: PortfolioPageProps) {
     telephone: hasPhone ? contactLinks.phoneDisplay : undefined,
     sameAs,
     knowsAbout: [
-      "Web Development",
-      "Cloud",
-      "DevOps",
-      "Automation",
-      "Next.js",
       "React",
+      "Django",
+      "FastAPI",
       "Python",
-      "Terraform",
+      "PostgreSQL",
+      "REST APIs",
       "n8n",
     ],
   };
@@ -306,6 +304,43 @@ export function PortfolioPage({ locale }: PortfolioPageProps) {
                 />
               ))}
             </div>
+
+            {content.projects.otherItems.length ? (
+              <div className="mt-16 border-t border-white/[0.08] pt-12">
+                <h3 className="text-2xl font-semibold tracking-[-0.03em] text-white">
+                  {content.projects.otherTitle}
+                </h3>
+                <p className="mt-3 max-w-2xl text-sm leading-7 text-slate-300">
+                  {content.projects.otherDescription}
+                </p>
+                <div className="mt-7 grid gap-5 md:grid-cols-2">
+                  {content.projects.otherItems.map((project) => (
+                    <article
+                      key={project.title}
+                      className="rounded-[1.7rem] border border-white/[0.08] bg-white/[0.035] p-6"
+                    >
+                      <p className="text-[0.68rem] font-semibold uppercase tracking-[0.26em] text-sky-300">
+                        {project.eyebrow}
+                      </p>
+                      <h4 className="mt-4 text-xl font-semibold text-white">{project.title}</h4>
+                      <p className="mt-3 text-sm leading-7 text-slate-300">{project.summary}</p>
+                      <div className="mt-5 flex flex-wrap gap-2">
+                        {project.stack.map((item) => (
+                          <Tag key={item} tone="muted">{item}</Tag>
+                        ))}
+                      </div>
+                      {project.links.filter((link) => link.href).map((link) => (
+                        <div key={link.label} className="mt-6">
+                          <LinkButton href={link.href!} variant="secondary" external>
+                            {link.label}
+                          </LinkButton>
+                        </div>
+                      ))}
+                    </article>
+                  ))}
+                </div>
+              </div>
+            ) : null}
           </section>
 
           <section className="reveal-up py-6 lg:py-10">
